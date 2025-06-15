@@ -50,42 +50,42 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Connect With Us</h3>
-            <ul className="space-y-1 text-xs text-muted-foreground">
+            <ul className="space-y-2 text-xs text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Github size={15} className="text-gray-800 dark:text-gray-200" />
                 <a
-                  href="https://github.com/keerthivasan"
+                  href="https://github.com/Keerthivasan-Venkitajalam"
                   className="inline-flex items-center font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Keerthivasan on GitHub"
                 >
-                  Keerthivasan
+                  <Github size={18} className="text-gray-800 dark:text-gray-200" />
                 </a>
+                <span>Keerthivasan</span>
               </li>
               <li className="flex items-center gap-2">
-                <Github size={15} className="text-gray-800 dark:text-gray-200" />
                 <a
-                  href="https://github.com/sajeev-senthil"
+                  href="https://github.com/SajeevSenthil"
                   className="inline-flex items-center font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Sajeev Senthil on GitHub"
                 >
-                  Sajeev Senthil
+                  <Github size={18} className="text-gray-800 dark:text-gray-200" />
                 </a>
+                <span>Sajeev Senthil</span>
               </li>
               <li className="flex items-center gap-2">
-                <Github size={15} className="text-gray-800 dark:text-gray-200" />
                 <a
-                  href="https://github.com/suganth-k"
+                  href="https://github.com/suganth07"
                   className="inline-flex items-center font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Suganth K on GitHub"
                 >
-                  Suganth K
+                  <Github size={18} className="text-gray-800 dark:text-gray-200" />
                 </a>
+                <span>Suganth K</span>
               </li>
             </ul>
           </div>
