@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -15,14 +16,11 @@ export default function Navbar({ onToggleTheme }: { onToggleTheme: () => void })
     <nav className="w-full border-b border-border bg-card sticky top-0 z-40 shadow-sm transition-colors">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
         <div className="flex items-center gap-2">
+          <Logo size={38} />
           <span className="text-2xl font-extrabold tracking-tight select-none flex items-center" style={{ letterSpacing: '-0.03em' }}>
-            <img
-              src="/lovable-uploads/8000b7b3-2470-4077-b953-993d76e1dade.png"
-              alt="VoiceAble Logo"
-              className="h-9 w-9 rounded-lg object-cover"
-              draggable={false}
-            />
-            <span className="ml-2" style={{ fontFamily: 'inherit', fontWeight: 900, color: 'hsl(var(--primary))' }}>VoiceAble</span>
+            <span className="ml-2" style={{ fontFamily: 'inherit', fontWeight: 900, color: 'hsl(var(--primary))' }}>
+              VoiceAble
+            </span>
           </span>
           <span className="ml-4 hidden md:inline text-muted-foreground text-sm font-semibold tracking-wide opacity-70">by Tensor Troops</span>
         </div>
