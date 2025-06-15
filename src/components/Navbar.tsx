@@ -1,46 +1,81 @@
 
-import React from "react";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Generator", href: "#generator" },
+  { label: "About", href: "#about" },
+];
 
 export default function Navbar({ onToggleTheme }: { onToggleTheme: () => void }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="w-full border-b border-border bg-[#0b1020] sticky top-0 z-40 transition-colors">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        {/* Left: Logo and Brand */}
-        <div className="flex items-center space-x-3">
-          <img
-            src="/lovable-uploads/8000b7b3-2470-4077-b953-993d76e1dade.png"
-            alt="VoiceAble Logo"
-            className="h-10 w-10 rounded-xl"
-            draggable={false}
-          />
-          <div className="flex flex-col -space-y-1">
-            <span className="text-white font-extrabold text-2xl tracking-tight" style={{ fontFamily: 'inherit' }}>
-              VoiceAble
-            </span>
-            <span className="text-sm text-muted-foreground font-medium">by Tensor Troops</span>
-          </div>
+    <nav className="w-full border-b border-border bg-card sticky top-0 z-40 shadow-sm transition-colors">
+      <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+        <div className="flex items-center gap-2">
+          <span className="text-2xl font-extrabold tracking-tight select-none flex items-center" style={{ letterSpacing: '-0.03em' }}>
+            <img
+              src="/lovable-uploads/8000b7b3-2470-4077-b953-993d76e1dade.png"
+              alt="VoiceAble Logo"
+              className="h-9 w-9 rounded-lg object-cover"
+              draggable={false}
+            />
+            <span className="ml-2" style={{ fontFamily: 'inherit', fontWeight: 900, color: 'hsl(var(--primary))' }}>VoiceAble</span>
+          </span>
+          <span className="ml-4 hidden md:inline text-muted-foreground text-sm font-semibold tracking-wide opacity-70">by Tensor Troops</span>
         </div>
-
-        {/* Center: Navigation links */}
-        <div className="flex items-center space-x-8">
-          <a href="#" className="text-white font-semibold hover:text-cyan-400 transition">Home</a>
-          <a href="#" className="text-white font-semibold hover:text-cyan-400 transition">Generator</a>
-          <a href="#" className="text-white font-semibold hover:text-cyan-400 transition">About</a>
+        <div className="hidden md:flex gap-4 items-center text-base">
+          {navLinks.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="px-3 py-2 rounded-md font-medium text-foreground hover:bg-accent transition focus-visible:outline-2"
+              aria-label={link.label}
+            >{link.label}</a>
+          ))}
+          <button
+            aria-label="Toggle theme"
+            className="ml-2 p-2 rounded-lg bg-background border border-border hover:bg-accent transition"
+            onClick={onToggleTheme}
+            title="Toggle light/dark mode"
+          >
+            <span className="sr-only">Toggle theme</span>
+            {/* Sun/Moon with visible color in both themes */}
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-yellow-500 dark:text-zinc-100" stroke="currentColor"><path d="M12 2v1m0 18v1m8.66-13.25l-.71.71M4.05 19.95l-.71.71m16.97 0l-.71-.71M4.05 4.05l-.71-.71M2 12h1m18 0h1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/><circle cx={12} cy={12} r={5} strokeWidth={2} /></svg>
+          </button>
         </div>
-
-        {/* Right: Theme Toggle */}
+        {/* Hamburger for mobile */}
         <button
-          aria-label="Toggle theme"
-          className="ml-2 p-2 rounded-lg border border-border hover:bg-accent transition bg-[#101632]"
-          onClick={onToggleTheme}
-          title="Toggle light/dark mode"
+          className="md:hidden p-2 rounded-lg bg-background border border-border hover:bg-accent transition ml-1"
+          aria-label="Open menu"
+          onClick={() => setMenuOpen(v => !v)}
         >
-          <span className="sr-only">Toggle theme</span>
-          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-zinc-100" stroke="currentColor">
-            <path d="M12 2v1m0 18v1m8.66-13.25l-.71.71M4.05 19.95l-.71.71m16.97 0l-.71-.71M4.05 4.05l-.71-.71M2 12h1m18 0h1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx={12} cy={12} r={5} strokeWidth={2} />
-          </svg>
+          <span className="sr-only">Open menu</span>
+          {menuOpen ? <X /> : <Menu />}
         </button>
+      </div>
+      {/* Drawer menu mobile */}
+      <div className={`md:hidden transition-all duration-200 bg-card border-t border-border ${menuOpen ? "block" : "hidden"}`}>
+        <div className="flex flex-col py-2 px-4">
+          {navLinks.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="py-2 font-medium text-foreground hover:bg-accent rounded transition"
+              onClick={() => setMenuOpen(false)}
+            >{link.label}</a>
+          ))}
+          <button
+            aria-label="Toggle theme"
+            className="mt-2 p-2 rounded-lg border border-border hover:bg-accent transition self-start"
+            onClick={onToggleTheme}
+          >
+            <span className="sr-only">Toggle theme</span>
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-yellow-500 dark:text-zinc-100" stroke="currentColor"><path d="M12 2v1m0 18v1m8.66-13.25l-.71.71M4.05 19.95l-.71.71m16.97 0l-.71-.71M4.05 4.05l-.71-.71M2 12h1m18 0h1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/><circle cx={12} cy={12} r={5} strokeWidth={2} /></svg>
+          </button>
+        </div>
       </div>
     </nav>
   );
