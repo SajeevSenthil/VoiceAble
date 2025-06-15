@@ -13,7 +13,8 @@ export default function VoiceTextInput({
 }) {
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
-  const recognitionRef = useRef<null | SpeechRecognition>(null);
+  // Fix: Use 'any' type here to avoid TS error on SpeechRecognition assignment
+  const recognitionRef = useRef<any>(null);
 
   // Check if browser supports SpeechRecognition
   const isSpeechSupported =
@@ -31,6 +32,7 @@ export default function VoiceTextInput({
       (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) return;
 
+    // No TS type error here: recognitionRef is any
     const recognition = new SpeechRecognition();
     recognitionRef.current = recognition;
     recognition.continuous = false;
@@ -93,4 +95,3 @@ export default function VoiceTextInput({
     </form>
   );
 }
-
