@@ -13,7 +13,7 @@ export default function VoiceTextInput({
 }) {
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
-  // Fix: Use 'any' type here to avoid TS error on SpeechRecognition assignment
+  // Use 'any' as type for compatibility
   const recognitionRef = useRef<any>(null);
 
   // Check if browser supports SpeechRecognition
@@ -32,7 +32,6 @@ export default function VoiceTextInput({
       (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) return;
 
-    // No TS type error here: recognitionRef is any
     const recognition = new SpeechRecognition();
     recognitionRef.current = recognition;
     recognition.continuous = false;
@@ -83,7 +82,12 @@ export default function VoiceTextInput({
           onClick={handleMicClick}
           disabled={!isSpeechSupported || disabled}
         >
-          {isRecording ? <MicOff className="text-red-500" /> : <Mic />}
+          {isRecording ? (
+            <MicOff className="text-red-500" />
+          ) : (
+            // Make the mic icon blue for both light and dark mode
+            <Mic className="text-blue-600 dark:text-blue-400" />
+          )}
         </Button>
       </div>
       {!isSpeechSupported && (

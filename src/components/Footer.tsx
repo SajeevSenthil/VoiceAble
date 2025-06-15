@@ -1,32 +1,64 @@
 
-import { Github } from "lucide-react";
+import { CheckCircle, Volume2, BookOpen, Accessibility, HeartHandshake } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border py-8 mt-8 w-full">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 px-4">
-        <div>
-          <span className="font-extrabold text-lg flex items-center gap-2">
-            <span className="rounded bg-gradient-to-br from-blue-600 to-cyan-400 p-1.5 text-white text-xl">🗣️</span>
-            VoiceAble
-          </span>
-          <p className="text-muted-foreground text-xs mt-1">
-            by Tensor Troops &mdash; Enabling digital access for all.
-          </p>
-        </div>
-        <div>
-          <span className="block font-semibold mb-1 text-primary">Contact us</span>
-          <div className="flex gap-4 items-center text-sm text-muted-foreground">
-            <a href="https://github.com/SajeevSenthil/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition flex items-center gap-1" title="Sajeev Senthil">
-              <Github size={18} className="inline-block mb-0.5" /> Sajeev
-            </a>
-            <a href="https://github.com/Keerthivasan-Venkitajalam/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition flex items-center gap-1" title="Keerthivasan V">
-              <Github size={18} className="inline-block mb-0.5" /> Keerthivasan
-            </a>
-            <a href="https://github.com/suganth07" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition flex items-center gap-1" title="Suganth A">
-              <Github size={18} className="inline-block mb-0.5" /> Suganth
-            </a>
+    <footer className="bg-gradient-to-b from-background to-[#eaeaff]/60 dark:from-[#181d2e] dark:to-[#16181f] border-t border-border pt-10 pb-4 mt-12 w-full">
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
+          <div>
+            <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">About VoiceAble</h3>
+            <p className="text-muted-foreground text-xs leading-relaxed">
+              Empowering accessibility through AI-powered voice interfaces. Build personalized tools that speak for everyone.
+            </p>
           </div>
+          <div>
+            <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Features</h3>
+            <ul className="space-y-1 text-xs text-muted-foreground">
+              <li className="flex items-center gap-1">
+                <Volume2 size={16} className="text-blue-500" /> Voice Generation
+              </li>
+              <li className="flex items-center gap-1">
+                <Accessibility size={16} className="text-green-600" /> Accessibility First
+              </li>
+              <li className="flex items-center gap-1">
+                <CheckCircle size={15} className="text-green-400" /> WCAG Compliant
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Resources</h3>
+            <ul className="space-y-1 text-xs text-muted-foreground">
+              <li className="flex items-center gap-1">
+                <BookOpen size={15} className="text-cyan-500" /> Documentation
+              </li>
+              <li className="flex items-center gap-1">
+                <BookOpen size={15} className="text-cyan-400" /> Accessibility Guide
+              </li>
+              <li className="flex items-center gap-1">
+                <BookOpen size={15} className="text-cyan-300" /> Support
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Connect With Us</h3>
+            <ul className="space-y-1 text-xs text-muted-foreground">
+              <li className="flex items-center gap-1">
+                <HeartHandshake size={15} className="text-pink-500" /> Keerthivasan
+              </li>
+              <li className="flex items-center gap-1">
+                <HeartHandshake size={15} className="text-pink-400" /> Sajeev Senthil
+              </li>
+              <li className="flex items-center gap-1">
+                <HeartHandshake size={15} className="text-pink-300" /> Suganth K
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr className="border-t border-border mb-4 opacity-40" />
+        <div className="text-xs flex flex-col md:flex-row md:justify-between items-center text-muted-foreground gap-2">
+          <span>© 2025 VoiceAble. Built for inclusion.</span>
+          <span>Made with <span className="text-pink-500">♥</span> by our passionate team.</span>
         </div>
       </div>
     </footer>
