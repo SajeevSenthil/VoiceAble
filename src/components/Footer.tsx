@@ -1,5 +1,5 @@
 
-import { CheckCircle, Volume2, BookOpen, Accessibility, HeartHandshake, Linkedin } from "lucide-react";
+import { CheckCircle, Volume2, BookOpen, Accessibility, HeartHandshake, Linkedin, Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -55,6 +55,15 @@ export default function Footer() {
                 >
                   <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
                 </a>
+                <a
+                  href="https://github.com/keerthivasan"
+                  className="ml-1 inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Keerthivasan on GitHub"
+                >
+                  <Github size={15} className="text-gray-800 hover:text-black dark:text-gray-200 dark:hover:text-white" />
+                </a>
               </li>
               <li className="flex items-center gap-1">
                 <HeartHandshake size={15} className="text-pink-400" />
@@ -68,6 +77,15 @@ export default function Footer() {
                 >
                   <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
                 </a>
+                <a
+                  href="https://github.com/sajeev-senthil"
+                  className="ml-1 inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Sajeev Senthil on GitHub"
+                >
+                  <Github size={15} className="text-gray-800 hover:text-black dark:text-gray-200 dark:hover:text-white" />
+                </a>
               </li>
               <li className="flex items-center gap-1">
                 <HeartHandshake size={15} className="text-pink-300" />
@@ -80,6 +98,15 @@ export default function Footer() {
                   aria-label="Suganth K on LinkedIn"
                 >
                   <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
+                </a>
+                <a
+                  href="https://github.com/suganth-k"
+                  className="ml-1 inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Suganth K on GitHub"
+                >
+                  <Github size={15} className="text-gray-800 hover:text-black dark:text-gray-200 dark:hover:text-white" />
                 </a>
               </li>
             </ul>
