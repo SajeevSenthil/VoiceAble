@@ -25,7 +25,6 @@ export default function AccessibleToolForm({
   const [error, setError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // For now, just stub out OpenAI call
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
@@ -84,10 +83,11 @@ export default function AccessibleToolForm({
   return (
     <form
       ref={formRef}
-      className="bg-card rounded-xl border border-border p-8 shadow-lg flex flex-col gap-5"
+      className="bg-card rounded-xl border border-border p-8 shadow-lg flex flex-col gap-5 w-full max-w-xl mx-auto"
       onSubmit={handleSubmit}
       aria-label="Describe Accessible Tool"
       tabIndex={-1}
+      id="generator"
     >
       <label
         htmlFor="input"
@@ -98,8 +98,7 @@ export default function AccessibleToolForm({
       <Textarea
         id="input"
         autoFocus
-        minRows={3}
-        maxRows={5}
+        rows={4}
         maxLength={220}
         placeholder='E.g., "A screen reader with AI summarization"'
         value={value}
