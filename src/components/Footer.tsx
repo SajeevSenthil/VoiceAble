@@ -1,5 +1,5 @@
 
-import { CheckCircle, Volume2, BookOpen, Accessibility, HeartHandshake, Linkedin, Github } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -16,13 +16,13 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Features</h3>
             <ul className="space-y-1 text-xs text-muted-foreground">
               <li className="flex items-center gap-1">
-                <Volume2 size={16} className="text-blue-500" /> Voice Generation
+                Voice Generation
               </li>
               <li className="flex items-center gap-1">
-                <Accessibility size={16} className="text-green-600" /> Accessibility First
+                Accessibility First
               </li>
               <li className="flex items-center gap-1">
-                <CheckCircle size={15} className="text-green-400" /> WCAG Compliant
+                WCAG Compliant
               </li>
             </ul>
           </div>
@@ -30,83 +30,53 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Resources</h3>
             <ul className="space-y-1 text-xs text-muted-foreground">
               <li className="flex items-center gap-1">
-                <BookOpen size={15} className="text-cyan-500" /> Documentation
+                Documentation
               </li>
               <li className="flex items-center gap-1">
-                <BookOpen size={15} className="text-cyan-400" /> Accessibility Guide
+                Accessibility Guide
               </li>
               <li className="flex items-center gap-1">
-                <BookOpen size={15} className="text-cyan-300" /> Support
+                Support
               </li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Connect With Us</h3>
             <ul className="space-y-1 text-xs text-muted-foreground">
-              <li className="flex items-center gap-1">
-                <HeartHandshake size={15} className="text-pink-500" />
-                Keerthivasan
-                <a
-                  href="https://www.linkedin.com/in/keerthivasan"
-                  className="ml-1 inline-flex items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Keerthivasan on LinkedIn"
-                >
-                  <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
-                </a>
+              <li className="flex items-center gap-2">
+                <Github size={15} className="text-gray-800 dark:text-gray-200" />
                 <a
                   href="https://github.com/keerthivasan"
-                  className="ml-1 inline-flex items-center"
+                  className="inline-flex items-center font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Keerthivasan on GitHub"
                 >
-                  <Github size={15} className="text-gray-800 hover:text-black dark:text-gray-200 dark:hover:text-white" />
+                  Keerthivasan
                 </a>
               </li>
-              <li className="flex items-center gap-1">
-                <HeartHandshake size={15} className="text-pink-400" />
-                Sajeev Senthil
-                <a
-                  href="https://www.linkedin.com/in/sajeev-senthil"
-                  className="ml-1 inline-flex items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Sajeev Senthil on LinkedIn"
-                >
-                  <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
-                </a>
+              <li className="flex items-center gap-2">
+                <Github size={15} className="text-gray-800 dark:text-gray-200" />
                 <a
                   href="https://github.com/sajeev-senthil"
-                  className="ml-1 inline-flex items-center"
+                  className="inline-flex items-center font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Sajeev Senthil on GitHub"
                 >
-                  <Github size={15} className="text-gray-800 hover:text-black dark:text-gray-200 dark:hover:text-white" />
+                  Sajeev Senthil
                 </a>
               </li>
-              <li className="flex items-center gap-1">
-                <HeartHandshake size={15} className="text-pink-300" />
-                Suganth K
-                <a
-                  href="https://www.linkedin.com/in/suganth-k"
-                  className="ml-1 inline-flex items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Suganth K on LinkedIn"
-                >
-                  <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
-                </a>
+              <li className="flex items-center gap-2">
+                <Github size={15} className="text-gray-800 dark:text-gray-200" />
                 <a
                   href="https://github.com/suganth-k"
-                  className="ml-1 inline-flex items-center"
+                  className="inline-flex items-center font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Suganth K on GitHub"
                 >
-                  <Github size={15} className="text-gray-800 hover:text-black dark:text-gray-200 dark:hover:text-white" />
+                  Suganth K
                 </a>
               </li>
             </ul>
