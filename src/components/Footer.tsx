@@ -1,5 +1,5 @@
 
-import { CheckCircle, Volume2, BookOpen, Accessibility, HeartHandshake } from "lucide-react";
+import { CheckCircle, Volume2, BookOpen, Accessibility, HeartHandshake, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -44,13 +44,43 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Connect With Us</h3>
             <ul className="space-y-1 text-xs text-muted-foreground">
               <li className="flex items-center gap-1">
-                <HeartHandshake size={15} className="text-pink-500" /> Keerthivasan
+                <HeartHandshake size={15} className="text-pink-500" />
+                Keerthivasan
+                <a
+                  href="https://www.linkedin.com/in/keerthivasan"
+                  className="ml-1 inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Keerthivasan on LinkedIn"
+                >
+                  <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
+                </a>
               </li>
               <li className="flex items-center gap-1">
-                <HeartHandshake size={15} className="text-pink-400" /> Sajeev Senthil
+                <HeartHandshake size={15} className="text-pink-400" />
+                Sajeev Senthil
+                <a
+                  href="https://www.linkedin.com/in/sajeev-senthil"
+                  className="ml-1 inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Sajeev Senthil on LinkedIn"
+                >
+                  <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
+                </a>
               </li>
               <li className="flex items-center gap-1">
-                <HeartHandshake size={15} className="text-pink-300" /> Suganth K
+                <HeartHandshake size={15} className="text-pink-300" />
+                Suganth K
+                <a
+                  href="https://www.linkedin.com/in/suganth-k"
+                  className="ml-1 inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Suganth K on LinkedIn"
+                >
+                  <Linkedin size={15} className="text-blue-700 hover:text-blue-800 dark:text-blue-400" />
+                </a>
               </li>
             </ul>
           </div>
