@@ -113,7 +113,7 @@ export default function BuildingStep({ template, prompt, onAppGenerated }: Build
           Building your AI-powered tool...
         </span>
         <span className="text-muted-foreground text-base mt-2 text-center">
-          Using GPT-4o Mini to generate your accessible app!<br/>
+          Using GPT-4o Mini and Lovable.AI to generate your accessible app!<br/>
           <span className="text-sm text-blue-500 font-medium">
             Template: {getTemplateName()}
           </span>

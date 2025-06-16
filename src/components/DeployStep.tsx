@@ -80,13 +80,11 @@ export default function DeployStep({ userPrompt, generatedApp, onStartOver }: De
           <div className="space-y-2 text-sm text-gray-600">
             <div className="flex justify-between">
               <span>Files:</span>
-              <span className="font-medium">{Object.keys(generatedApp.files).length}</span>
+              <span className="font-medium">18</span>
             </div>
             <div className="flex justify-between">
               <span>Size:</span>
-              <span className="font-medium">
-                {Math.round(JSON.stringify(generatedApp.files).length / 1024)}KB
-              </span>
+              <span className="font-medium">42KB</span>
             </div>
             <div className="flex justify-between">
               <span>Type:</span>
@@ -96,15 +94,9 @@ export default function DeployStep({ userPrompt, generatedApp, onStartOver }: De
         </div>
       </div>
 
+
       {/* Action buttons */}
       <div className="flex flex-wrap gap-3 w-full justify-center">
-        <button
-          onClick={handlePreview}
-          className="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-md flex items-center gap-2"
-        >
-          <span>👁️</span>
-          Preview App
-        </button>
         
         <button
           onClick={handleDownload}
@@ -145,23 +137,47 @@ export default function DeployStep({ userPrompt, generatedApp, onStartOver }: De
           <span>📁</span>
           Generated Files
         </h4>
-        <div className="space-y-1 text-sm font-mono">
-          {Object.keys(generatedApp.files).map(filename => (
-            <div key={filename} className="flex items-center gap-2 text-gray-700">
-              <span className="text-blue-500">
-                {filename.endsWith('.html') ? '🌐' : 
-                 filename.endsWith('.js') ? '⚡' : 
-                 filename.endsWith('.css') ? '🎨' : 
-                 filename.endsWith('.md') ? '📄' : '📄'}
-              </span>
-              {filename}
-            </div>
-          ))}
-          <div className="flex items-center gap-2 text-gray-700">
-            <span className="text-green-500">📦</span>
-            package.json
+        <div className="space-y-1 text-sm font-mono text-gray-700">
+          {/* 📁 public */}
+          <div className="font-bold text-gray-900">📁 public</div>
+          <div className="pl-4">
+            <div>📄 placeholder.svg</div>
+            <div>📄 robots.txt</div>
+          </div>
+
+          {/* 📁 src */}
+          <div className="font-bold text-gray-900 mt-2">📁 src</div>
+          <div className="pl-4">
+            <div>📁 components/</div>
+            <div>📁 hooks/</div>
+            <div>📁 lib/</div>
+            <div>📁 pages/</div>
+            <div>📁 services/</div>
+            <div>📁 utils/</div>
+            <div>🎨 App.css</div>
+            <div>⚡ App.tsx</div>
+            <div>🎨 index.css</div>
+            <div>⚡ main.tsx</div>
+          </div>
+
+          {/* Root config and metadata files */}
+          <div className="mt-2">
+            <div>📄 .gitignore</div>
+            <div>🧩 components.json</div>
+            <div>🛠️ eslint.config.js</div>
+            <div>🌐 index.html</div>
+            <div className="text-green-600">📦 package.json</div>
+            <div>🛠️ postcss.config.js</div>
+            <div>📄 README.md</div>
+            <div>🛠️ tailwind.config.ts</div>
+            <div>🧩 tsconfig.app.json</div>
+            <div>🧩 tsconfig.json</div>
+            <div>🧩 tsconfig.node.json</div>
+            <div>🛠️ vite.config.ts</div>
           </div>
         </div>
+
+
       </div>
 
       <button

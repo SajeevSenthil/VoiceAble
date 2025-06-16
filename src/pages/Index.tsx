@@ -134,8 +134,11 @@ export default function Index() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
               Just <b>speak or type</b> your need, and <b>VoiceAble</b> generates a digital accessibility tool in seconds. 
-              No coding, just inclusion — by <span className="font-semibold text-blue-700 dark:text-cyan-300">Tensor Troops</span>.
+              No coding, just inclusion — by
             </p>
+            <div className="font-semibold text-blue-700 dark:text-cyan-300 text-center w-full mt-1 text-2xl">
+              Tensor Troops
+            </div>
           </section>          {/* Stepper and current stage */}
           <Stepper currentStep={step} />
           <section className="w-full my-3">

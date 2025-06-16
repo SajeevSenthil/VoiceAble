@@ -75,18 +75,6 @@ export default function Footer() {
                 </a>
                 <span>Sajeev Senthil</span>
               </li>
-              <li className="flex items-center gap-2">
-                <a
-                  href="https://github.com/suganth07"
-                  className="inline-flex items-center font-medium hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Suganth K on GitHub"
-                >
-                  <Github size={18} className="text-gray-800 dark:text-gray-200" />
-                </a>
-                <span>Suganth K</span>
-              </li>
             </ul>
           </div>
         </div>
