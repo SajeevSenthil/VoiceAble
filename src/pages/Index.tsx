@@ -19,7 +19,8 @@ const stepLabels = [
 export default function Index() {
   const [theme, setTheme] = useState<"light" | "dark">(
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  );  const [step, setStep] = useState<Step>(0);
+  );
+  const [step, setStep] = useState<Step>(0);
   const [userPrompt, setUserPrompt] = useState<string>("");
   const [template, setTemplate] = useState<string>("default");
   const [generatedApp, setGeneratedApp] = useState<GeneratedApp | null>(null);
