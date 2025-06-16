@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# 🎙️ VoiceAble
 
-## Project info
+> Just speak or type your need, and VoiceAble generates a digital accessibility tool in seconds.  
+> **No coding, just inclusion.**
 
-**URL**: https://lovable.dev/projects/5fdcf105-691c-4030-8336-b6eb513c6d52
+---
 
-## How can I edit this code?
+## 🌟 Inspiration
 
-There are several ways of editing your application.
+VoiceAble was created for **Prompt Stream 3: Social Good** — _"Build an assistant that takes in a natural language description (like 'a voice-controlled daily planner') and outputs an accessible tool — instantly, no tech knowledge required."_
 
-**Use Lovable**
+We saw a gap in accessibility: while tools exist, **creating** them still requires technical knowledge. Our goal was to eliminate that barrier using voice and AI. Whether it’s a planner, a form, or a support widget — VoiceAble gives non-coders the power to build inclusive tools just by describing them in plain English.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5fdcf105-691c-4030-8336-b6eb513c6d52) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 💡 What it does
 
-**Use your preferred IDE**
+- Users **speak or type** what they want — e.g., “a tool to collect student feedback with emojis.”
+- VoiceAble **generates the corresponding JSX code** using GPT-4o-mini.
+- The generated component is instantly **rendered in the browser**.
+- Users can **download the tool as a project file** via Lovable.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🧱 Tech Stack
 
-Follow these steps:
+| Layer          | Tech Used                         |
+|----------------|-----------------------------------|
+| Framework      | React + TypeScript                |
+| UI Styling     | Tailwind CSS + Lucide Icons       |
+| Build Tool     | Vite                              |
+| AI Integration | GPT-4o-mini via OpenRouter        |
+| Utilities      | Lovable (for file packaging)      |
+| State/UI Logic | Custom hooks, ShadCN UI components |
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🚧 Challenges We Faced
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Translating **unstructured speech** into usable code
+- Keeping AI responses **accessible and semantically correct**
+- Handling **dynamic component rendering** with minimal delay
+- Supporting **dark/light mode** with consistent styling
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## ✅ Accomplishments
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- End-to-end voice → AI → code → download flow
+- Intuitive and **zero-friction UX**
+- Fully responsive and theme-aware interface
+- Deployed with support for real-time rendering
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📚 What We Learned
 
-## What technologies are used for this project?
+- Prompt engineering for **functional code generation**
+- Integrating GPT-4o-mini efficiently in a live frontend app
+- Balancing AI flexibility with frontend safety and validation
+- Designing accessibility-first UIs for broad users
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🚀 What’s Next
 
-## How can I deploy this project?
+- 🌐 Support for multilingual input
+- 🧠 Chained tool creation (e.g., linked inputs + validation)
+- 📲 PWA version for offline generation
+- ♿ Built-in WCAG accessibility audits
 
-Simply open [Lovable](https://lovable.dev/projects/5fdcf105-691c-4030-8336-b6eb513c6d52) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 📦 Built With
 
-Yes, you can!
+- **React**, **TypeScript**, **Vite**
+- **Tailwind CSS**, **Lucide Icons**
+- **GPT-4o-mini** via [OpenRouter](https://openrouter.ai/)
+- **Lovable** for downloadable tool packaging
+- **ShadCN UI**, **Custom Hooks**, and **ESLint** for developer experience
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🎥 Demo
+
+> Want to see VoiceAble in action?  
+> 📽️ _[[Demo video link here](https://youtu.be/NesQ9su7AGs)]_
+
+
+Let me know if you’d like this as a downloadable file or want badges (build, license, stars, etc.) added!
