@@ -1,9 +1,12 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import VoiceTextInput from "@/components/VoiceTextInput";
+import BuildingStep from "@/components/BuildingStep";
+import DeployStep from "@/components/DeployStep";
+import HowItWorks from "@/components/HowItWorks";
 import { Stepper } from "@/components/Stepper";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import type { GeneratedApp } from "@/utils/codeGenerator";
 
 type Step = 0 | 1 | 2 | 3;
 const stepLabels = [
@@ -16,10 +19,16 @@ const stepLabels = [
 export default function Index() {
   const [theme, setTheme] = useState<"light" | "dark">(
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  );
-  const [step, setStep] = useState<Step>(0);
+  );  const [step, setStep] = useState<Step>(0);
   const [userPrompt, setUserPrompt] = useState<string>("");
   const [template, setTemplate] = useState<string>("default");
+  const [generatedApp, setGeneratedApp] = useState<GeneratedApp | null>(null);
+
+  // Auto-progress from step 2 (generation) to step 3 (deploy) when app is generated
+  const handleAppGenerated = (app: GeneratedApp) => {
+    setGeneratedApp(app);
+    setStep(3);
+  };
 
   const handleToggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -82,69 +91,26 @@ export default function Index() {
           </button>
         </div>
       );
-    }
-
-    if (step === 2) {
+    }    if (step === 2) {
       return (
-        <div className="flex flex-col gap-8 items-center justify-center py-10 w-full max-w-md mx-auto">
-          <div className="flex flex-col gap-2 items-center">
-            <span className="text-2xl">⚡</span>
-            <span className="text-xl font-bold text-blue-600">
-              Building your tool...
-            </span>
-            <span className="text-muted-foreground text-base mt-2">
-              Hang tight, we’re generating your accessible app!
-            </span>
-          </div>
-          <div className="animate-spin rounded-full border-4 border-blue-400 border-t-transparent w-12 h-12" />
-          <button
-            disabled
-            className="w-full mt-4 px-8 py-3 rounded-md font-semibold bg-blue-600 text-white text-lg shadow-md"
-          >
-            Generating...
-          </button>
-        </div>
+        <BuildingStep 
+          template={template} 
+          prompt={userPrompt}
+          onAppGenerated={handleAppGenerated}
+        />
       );
-    }
-
-    if (step === 3) {
+    }    if (step === 3) {
       return (
-        <div className="flex flex-col gap-8 items-center justify-center py-10 w-full max-w-lg mx-auto">
-          <div className="flex flex-col gap-4 items-center">
-            <span className="text-3xl">🚀</span>
-            <span className="text-xl font-bold text-cyan-600">
-              Your tool is ready to deploy!
-            </span>
-            <span className="text-base text-muted-foreground text-center">
-              Download or deploy your new accessible tool, crafted by <b>VoiceAble</b> with your prompt:<br/>
-              <span className="inline-block italic my-2 text-blue-500">"{userPrompt}"</span>
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-3 w-full justify-center">
-            <a
-              href="#"
-              className="px-7 py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow"
-            >
-              Download Code
-            </a>
-            <a
-              href="#"
-              className="px-7 py-2 rounded bg-cyan-500 text-white font-semibold hover:bg-cyan-600 transition shadow"
-            >
-              Deploy to Vercel
-            </a>
-          </div>
-          <button
-            className="w-full mt-8 px-6 py-2 bg-muted rounded text-primary font-medium hover:bg-muted-foreground/20 transition"
-            onClick={() => {
-              setStep(0);
-              setUserPrompt("");
-              setTemplate("default");
-            }}
-          >
-            Start Over
-          </button>
-        </div>
+        <DeployStep 
+          userPrompt={userPrompt}
+          generatedApp={generatedApp}
+          onStartOver={() => {
+            setStep(0);
+            setUserPrompt("");
+            setTemplate("default");
+            setGeneratedApp(null);
+          }}
+        />
       );
     }
 
@@ -169,12 +135,18 @@ export default function Index() {
               Just <b>speak or type</b> your need, and <b>VoiceAble</b> generates a digital accessibility tool in seconds. 
               No coding, just inclusion — by <span className="font-semibold text-blue-700 dark:text-cyan-300">Tensor Troops</span>.
             </p>
-          </section>
-          {/* Stepper and current stage */}
+          </section>          {/* Stepper and current stage */}
           <Stepper currentStep={step} />
           <section className="w-full my-3">
             {renderStepContent()}
           </section>
+          
+          {/* How it works section - only show on initial step */}
+          {step === 0 && (
+            <section className="w-full mt-12">
+              <HowItWorks />
+            </section>
+          )}
         </main>
         <Footer />
       </div>
